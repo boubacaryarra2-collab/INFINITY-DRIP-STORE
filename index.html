@@ -1,10 +1,49 @@
 <!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INFINITY-DRIP STORE</title><link rel="stylesheet" href="style.css"></head><body>
-<header><h1>INFINITY-DRIP</h1><div onclick="ouvrirPanier()">🛒 <span id="compteur">0</span></div></header>
-<div class="box-expedition"><div>⚠️</div><div><h4>Frais d'expédition</h4><p>Payés à la livraison à Bamako</p><button onclick="ouvrirFrais()">Voir les frais</button></div></div>
-<div id="produits" class="produits"></div>
-<p style="text-align:center;padding:40px;">Aucun produit pour le moment. Bientôt dispo 🔥</p>
-<footer class="menu-bas"><div>🏠<br>Accueil</div><div onclick="ouvrirPanier()">🛒<br>Panier</div><div>👤<br>Compte</div></footer>
-<div id="popup" class="popup"><div class="popup-content"><span class="close" onclick="fermerPanier()">&times;</span><h2>Panier Vide</h2><p>Ajoute des produits pour commander</p></div></div>
-<div id="popup-frais" class="popup"><div class="popup-content"><span class="close" onclick="fermerFrais()">&times;</span><h2>Frais d'expédition</h2><div class="frais-item"><div><b>Express</b><p>10-15 jours</p></div><div class="prix-frais">12000 FCFA/kg</div></div></div></div>
+<title>INFINITY-DRIP - Chine vers Mali</title><link rel="stylesheet" href="style.css"></head><body>
+
+<header><h1>INFINITY-<span>DRIP</span> by Toi</h1><div>☀️</div><div>☰</div></header>
+
+<section class="accueil">
+  <p class="surtitre">INFINITY-DRIP BY TOI</p>
+  <h2>Votre passerelle<br><i>D'achat,</i><br>Chine → Mali.</h2>
+  <p>Produits de chine exportés partout au Mali.</p>
+  <button onclick="scrollProduits()">Découvrir les produits</button>
+</section>
+
+<div class="box-frais">
+  <div>⚠️</div>
+  <div>
+    <h4>Frais d'expédition</h4>
+    <p>Les frais ne sont pas inclus. Payés à la livraison à Bamako.</p>
+    <button onclick="ouvrirFrais()">👁️ Voir les frais d'expédition</button>
+  </div>
+</div>
+
+<section id="produits">
+  <h3>NOS PRODUITS</h3>
+  <h2>Nos produits</h2>
+  <div class="grille">
+    <p style="text-align:center;padding:40px;">Aucun produit pour le moment.<br>On va les ajouter ensemble 🔥</p>
+  </div>
+</section>
+
+<footer class="menu-bas">
+  <div>🏠<br>Nos produits</div>
+  <div onclick="ouvrirPanier()">🛒<br>Panier</div>
+  <div>👤<br>Mon compte</div>
+</footer>
+
+<!-- POPUP FRAIS -->
+<div id="popup-frais" class="popup"><div class="popup-content">
+  <span class="close" onclick="fermerFrais()">&times;</span><h2>Frais d'expédition</h2>
+  <div class="frais-card"><b>Envoi simple</b><span>10 000 FCFA / kg</span><p>Délai : 2 à 3 semaines</p><small>Idéal pour les envois non urgents</small></div>
+  <div class="frais-card express"><b>Express</b><span>12 000 FCFA / kg</span><p>Délai : 10 à 15 jours</p><small>Livraison rapide</small></div>
+  <p class="note">Note: Payés à la livraison à Bamako. Préciser sur WhatsApp.</p>
+</div></div>
+
+<!-- POPUP PANIER -->
+<div id="popup" class="popup"><div class="popup-content">
+  <span class="close" onclick="fermerPanier()">&times;</span><h2>Panier Vide</h2><p>Ajoute des produits</p>
+</div></div>
+
 <script src="script.js"></script></body></html>
