@@ -1,5 +1,31 @@
 <!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INFINITY-DRIP - Chine vers Mali</title><link rel="stylesheet" href="style.css"></head><body>
+<title>INFINITY-DRIP - Chine vers Mali</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial}
+body{background:#0a0a0a;color:#fff}
+header{background:#000;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+header h1{font-size:18px;font-weight:800} header h1 span{color:#f59e0b}
+.accueil{text-align:center;padding:60px 20px;background:linear-gradient(180deg,#0a0a0a 0%,#1a1a1a 100%)}
+.surtitre{color:#f59e0b;font-size:12px;letter-spacing:2px;margin-bottom:10px}
+.accueil h2{font-size:32px;line-height:1.2;margin-bottom:15px} .accueil h2 i{font-style:italic;color:#f59e0b}
+.accueil p{color:#aaa;margin-bottom:25px}
+.accueil button{background:#f59e0b;color:#000;border:none;padding:14px 28px;border-radius:30px;font-weight:bold;font-size:16px}
+.box-frais{background:#1a1a1a;margin:20px;border-radius:16px;padding:20px;display:flex;gap:15px;border:1px solid #333}
+.box-frais h4{margin-bottom:5px} .box-frais p{color:#aaa;font-size:14px}
+.box-frais button{background:#333;color:#fff;border:1px solid #555;padding:10px 15px;border-radius:8px;margin-top:10px;width:100%}
+#produits{padding:40px 20px;background:#fff;color:#000;border-radius:30px 30px 0 0}
+#produits h3{color:#f59e0b;font-size:12px;text-align:center} 
+#produits h2{font-size:28px;text-align:center;margin-bottom:20px}
+.menu-bas{position:fixed;bottom:0;left:0;right:0;background:#000;display:flex;justify-content:space-around;padding:12px;border-top:1px solid #333}
+.menu-bas div{text-align:center;font-size:11px;color:#aaa}
+.popup{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:20;overflow-y:auto}
+.popup-content{background:#1a1a1a;margin:5% auto;padding:25px;border-radius:20px;width:90%;max-width:450px;border:1px solid #333}
+.close{float:right;font-size:28px;cursor:pointer;color:#aaa}
+.frais-card{background:#0a0a0a;border:1px solid #333;padding:15px;border-radius:12px;margin:15px 0}
+.frais-card b{display:block} .frais-card span{float:right;color:#f59e0b;font-weight:bold}
+.frais-card.express{border-color:#f59e0b}
+.note{color:#aaa;font-size:12px;text-align:center;margin-top:15px}
+</style></head><body>
 
 <header><h1>INFINITY-<span>DRIP</span> by Toi</h1><div>☀️</div><div>☰</div></header>
 
@@ -7,7 +33,7 @@
   <p class="surtitre">INFINITY-DRIP BY TOI</p>
   <h2>Votre passerelle<br><i>D'achat,</i><br>Chine → Mali.</h2>
   <p>Produits de chine exportés partout au Mali.</p>
-  <button onclick="scrollProduits()">Découvrir les produits</button>
+  <button onclick="document.getElementById('produits').scrollIntoView()">Découvrir les produits</button>
 </section>
 
 <div class="box-frais">
@@ -15,35 +41,31 @@
   <div>
     <h4>Frais d'expédition</h4>
     <p>Les frais ne sont pas inclus. Payés à la livraison à Bamako.</p>
-    <button onclick="ouvrirFrais()">👁️ Voir les frais d'expédition</button>
+    <button onclick="document.getElementById('popup-frais').style.display='block'">👁️ Voir les frais d'expédition</button>
   </div>
 </div>
 
 <section id="produits">
   <h3>NOS PRODUITS</h3>
   <h2>Nos produits</h2>
-  <div class="grille">
-    <p style="text-align:center;padding:40px;">Aucun produit pour le moment.<br>On va les ajouter ensemble 🔥</p>
-  </div>
+  <p style="text-align:center;padding:40px;">Aucun produit pour le moment.<br>On va les ajouter ensemble 🔥</p>
 </section>
 
 <footer class="menu-bas">
   <div>🏠<br>Nos produits</div>
-  <div onclick="ouvrirPanier()">🛒<br>Panier</div>
+  <div onclick="document.getElementById('popup').style.display='block'">🛒<br>Panier</div>
   <div>👤<br>Mon compte</div>
 </footer>
 
-<!-- POPUP FRAIS -->
 <div id="popup-frais" class="popup"><div class="popup-content">
-  <span class="close" onclick="fermerFrais()">&times;</span><h2>Frais d'expédition</h2>
+  <span class="close" onclick="document.getElementById('popup-frais').style.display='none'">&times;</span><h2>Frais d'expédition</h2>
   <div class="frais-card"><b>Envoi simple</b><span>10 000 FCFA / kg</span><p>Délai : 2 à 3 semaines</p><small>Idéal pour les envois non urgents</small></div>
   <div class="frais-card express"><b>Express</b><span>12 000 FCFA / kg</span><p>Délai : 10 à 15 jours</p><small>Livraison rapide</small></div>
   <p class="note">Note: Payés à la livraison à Bamako. Préciser sur WhatsApp.</p>
 </div></div>
 
-<!-- POPUP PANIER -->
 <div id="popup" class="popup"><div class="popup-content">
-  <span class="close" onclick="fermerPanier()">&times;</span><h2>Panier Vide</h2><p>Ajoute des produits</p>
+  <span class="close" onclick="document.getElementById('popup').style.display='none'">&times;</span><h2>Panier Vide</h2><p>Ajoute des produits</p>
 </div></div>
 
-<script src="script.js"></script></body></html>
+</body></html>
