@@ -1,0 +1,10 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INFINITY-DRIP STORE</title><link rel="stylesheet" href="style.css"></head><body>
+<header><h1>INFINITY-DRIP</h1><div onclick="ouvrirPanier()">🛒 <span id="compteur">0</span></div></header>
+<div class="box-expedition"><div>⚠️</div><div><h4>Frais d'expédition</h4><p>Payés à la livraison à Bamako</p><button onclick="ouvrirFrais()">Voir les frais</button></div></div>
+<div id="produits" class="produits"></div>
+<p style="text-align:center;padding:40px;">Aucun produit pour le moment. Bientôt dispo 🔥</p>
+<footer class="menu-bas"><div>🏠<br>Accueil</div><div onclick="ouvrirPanier()">🛒<br>Panier</div><div>👤<br>Compte</div></footer>
+<div id="popup" class="popup"><div class="popup-content"><span class="close" onclick="fermerPanier()">&times;</span><h2>Panier Vide</h2><p>Ajoute des produits pour commander</p></div></div>
+<div id="popup-frais" class="popup"><div class="popup-content"><span class="close" onclick="fermerFrais()">&times;</span><h2>Frais d'expédition</h2><div class="frais-item"><div><b>Express</b><p>10-15 jours</p></div><div class="prix-frais">12000 FCFA/kg</div></div></div></div>
+<script src="script.js"></script></body></html>
